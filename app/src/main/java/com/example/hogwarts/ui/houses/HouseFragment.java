@@ -1,4 +1,4 @@
-package com.example.hogwarts.ui.gallery;
+package com.example.hogwarts.ui.houses;
 
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -14,17 +14,17 @@ import androidx.lifecycle.ViewModelProviders;
 
 import com.example.hogwarts.R;
 
-public class GalleryFragment extends Fragment {
+public class HouseFragment extends Fragment {
 
-    private GalleryViewModel galleryViewModel;
+    private HouseViewModel houseViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        galleryViewModel =
-                ViewModelProviders.of(this).get(GalleryViewModel.class);
-        View root = inflater.inflate(R.layout.fragment_gallery, container, false);
-        final TextView textView = root.findViewById(R.id.text_gallery);
-        galleryViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+        houseViewModel =
+                ViewModelProviders.of(this).get(HouseViewModel.class);
+        View root = inflater.inflate(R.layout.fragment_house, container, false);
+        final TextView textView = root.findViewById(R.id.text_home);
+        houseViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
             @Override
             public void onChanged(@Nullable String s) {
                 textView.setText(s);
