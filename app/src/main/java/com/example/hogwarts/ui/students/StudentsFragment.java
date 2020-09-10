@@ -16,20 +16,20 @@ import com.example.hogwarts.R;
 
 public class StudentsFragment extends Fragment {
 
-    private SlideshowViewModel slideshowViewModel;
+    private StudentsViewModel studentsViewModel;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        slideshowViewModel =
-                ViewModelProviders.of(this).get(SlideshowViewModel.class);
+//        studentsViewModel =
+//                ViewModelProviders.of(this).get(StudentsViewModel.class);
         View root = inflater.inflate(R.layout.fragment_students, container, false);
-        final TextView textView = root.findViewById(R.id.text_slideshow);
-        slideshowViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
+//        final TextView textView = root.findViewById(R.id.text_slideshow);
+//        studentsViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+//            @Override
+//            public void onChanged(@Nullable String s) {
+//                textView.setText(s);
+//            }
+//        });
         return root;
     }
 }

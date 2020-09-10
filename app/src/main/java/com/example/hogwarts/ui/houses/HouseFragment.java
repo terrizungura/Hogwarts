@@ -20,16 +20,16 @@ public class HouseFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        houseViewModel =
-                ViewModelProviders.of(this).get(HouseViewModel.class);
+//        houseViewModel =
+//                ViewModelProviders.of(this).get(HouseViewModel.class);class
         View root = inflater.inflate(R.layout.fragment_house, container, false);
-        final TextView textView = root.findViewById(R.id.text_home);
-        houseViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
+//        final TextView textView = root.findViewById(R.id.text_home);
+//        houseViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+//            @Override
+//            public void onChanged(@Nullable String s) {
+//                textView.setText(s);
+//            }
+//        });
         return root;
     }
 }

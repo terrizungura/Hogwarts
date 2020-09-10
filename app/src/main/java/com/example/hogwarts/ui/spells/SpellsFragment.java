@@ -20,16 +20,16 @@ public class SpellsFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        spellsViewModel =
-                ViewModelProviders.of(this).get(SpellsViewModel.class);
+//        spellsViewModel =
+//                ViewModelProviders.of(this).get(SpellsViewModel.class);
         View root = inflater.inflate(R.layout.fragment_spell, container, false);
-        final TextView textView = root.findViewById(R.id.text_gallery);
-        spellsViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-            @Override
-            public void onChanged(@Nullable String s) {
-                textView.setText(s);
-            }
-        });
+//        final TextView textView = root.findViewById(R.id.text_gallery);
+//        spellsViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
+//            @Override
+//            public void onChanged(@Nullable String s) {
+//                textView.setText(s);
+//            }
+//        });
         return root;
     }
 }
