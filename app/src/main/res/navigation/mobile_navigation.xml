@@ -7,19 +7,19 @@
 
     <fragment
         android:id="@+id/nav_houses"
-        android:name="com.example.hogwarts.ui.home.HomeFragment"
+        android:name="com.example.hogwarts.ui.houses.HouseFragment"
         android:label="@string/menu_houses"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_house" />
 
     <fragment
         android:id="@+id/nav_spells"
-        android:name="com.example.hogwarts.ui.gallery.GalleryFragment"
+        android:name="com.example.hogwarts.ui.spells.SpellsFragment"
         android:label="@string/menu_spells"
-        tools:layout="@layout/fragment_gallery" />
+        tools:layout="@layout/fragment_spell" />
 
     <fragment
         android:id="@+id/nav_students"
-        android:name="com.example.hogwarts.ui.slideshow.SlideshowFragment"
+        android:name="com.example.hogwarts.ui.students.StudentsFragment"
         android:label="@string/menu_students"
-        tools:layout="@layout/fragment_slideshow" />
+        tools:layout="@layout/fragment_students" />
 </navigation>
