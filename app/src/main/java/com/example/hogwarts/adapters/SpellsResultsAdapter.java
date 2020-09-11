@@ -19,6 +19,14 @@ public class SpellsResultsAdapter extends RecyclerView.Adapter<SpellsResultsAdap
 
     private List<Spells> results = new ArrayList<>();
 
+    public SpellsResultsAdapter() {
+
+    }
+
+    public void getData(List<Spells> spellList) {
+        this.results = spellList;
+    }
+
     @NonNull
     @Override
     public SpellsResultsAdapter.SpellsResultsHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {

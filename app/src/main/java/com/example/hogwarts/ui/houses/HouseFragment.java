@@ -10,26 +10,46 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 import androidx.lifecycle.ViewModelProviders;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.hogwarts.R;
+import com.example.hogwarts.adapters.HousesResultsAdapter;
+import com.example.hogwarts.adapters.SpellsResultsAdapter;
+import com.example.hogwarts.ui.spells.SpellsViewModel;
+
+import java.util.List;
 
 public class HouseFragment extends Fragment {
 
     private HouseViewModel houseViewModel;
+    private HousesResultsAdapter adapter;
 
-    public View onCreateView(@NonNull LayoutInflater inflater,
+    public HouseFragment(){}
+
+    @Override
+    public View onCreateView(LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-//        houseViewModel =
-//                ViewModelProviders.of(this).get(HouseViewModel.class);class
         View root = inflater.inflate(R.layout.fragment_house, container, false);
-//        final TextView textView = root.findViewById(R.id.text_home);
-//        houseViewModel.getText().observe(getViewLifecycleOwner(), new Observer<String>() {
-//            @Override
-//            public void onChanged(@Nullable String s) {
-//                textView.setText(s);
-//            }
-//        });
+
+        adapter = new HousesResultsAdapter();
+        RecyclerView recyclerView = root.findViewById(R.id.listItems);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        recyclerView.setAdapter(adapter);
+
+
+        houseViewModel = new ViewModelProvider(this).get(HouseViewModel.class);
+        houseViewModel.init();
+        houseViewModel.getHousesLiveData().observe(getActivity(), houses -> {
+            if (houses != null) {
+                adapter.setResults(List.of(houses));
+//                    //recyclerView.setAdapter(adapter);
+            }
+        });
+
+        houseViewModel.searchHouses();
         return root;
     }
 }

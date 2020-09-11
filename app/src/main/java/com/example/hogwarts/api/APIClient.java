@@ -22,6 +22,7 @@ public class APIClient {
             Request request = chain
                     .request()
                     .newBuilder()
+                    //.addHeader("Bearer", "key " +BuildConfig.API_KEY)
                     .addHeader("key", BuildConfig.API_KEY)
                     .build();
             return chain.proceed(request);

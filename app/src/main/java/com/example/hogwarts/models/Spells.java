@@ -3,6 +3,8 @@ package com.example.hogwarts.models;
 import com.google.gson.annotations.Expose;
 import com.google.gson.annotations.SerializedName;
 
+import java.util.List;
+
 public class Spells {
 
     @SerializedName("_id")
@@ -20,6 +22,18 @@ public class Spells {
     @SerializedName("__v")
     @Expose
     private Integer v;
+
+    public Spells(){
+
+    }
+
+    public Spells(String id, String spell, String type, String effect, Integer v) {
+        this.id = id;
+        this.spell = spell;
+        this.type = type;
+        this.effect = effect;
+        this.v = v;
+    }
 
     public String getId() {
         return id;
@@ -59,6 +73,10 @@ public class Spells {
 
     public void setV(Integer v) {
         this.v = v;
+    }
+
+    public void newSpells(List<Spells> spellsList) {
+
     }
 
 }

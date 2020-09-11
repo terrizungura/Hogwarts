@@ -1,5 +1,6 @@
 package com.example.hogwarts.adapters;
 
+import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -16,7 +17,12 @@ import java.util.List;
 
 public class HousesResultsAdapter extends RecyclerView.Adapter<HousesResultsAdapter.HousesResultsHolder> {
 
-    private List<Houses>results = new ArrayList<>();
+    private List<Houses>mHouses = new ArrayList<>();
+
+
+    public HousesResultsAdapter() {
+
+    }
 
     @NonNull
     @Override
@@ -29,7 +35,7 @@ public class HousesResultsAdapter extends RecyclerView.Adapter<HousesResultsAdap
     @Override
     public void onBindViewHolder(@NonNull HousesResultsHolder holder, int position) {
 
-        Houses houses =results.get(position);
+        Houses houses =mHouses.get(position);
 
         holder.textHouseName.setText(houses.getName());
         holder.textGhost.setText(houses.getHouseGhost());
@@ -38,11 +44,12 @@ public class HousesResultsAdapter extends RecyclerView.Adapter<HousesResultsAdap
 
     @Override
     public int getItemCount() {
-        return results != null ? results.size(): 0;
+        return mHouses != null ? mHouses.size(): 0;
+
     }
 
-    public void setResults(List<Houses> results){
-        this.results = results;
+    public void setResults(List<Houses> houses){
+        mHouses = houses;
         notifyDataSetChanged();
     }
 
