@@ -3,6 +3,7 @@ package com.example.hogwarts.ui.houses;
 import android.app.Application;
 
 import androidx.annotation.NonNull;
+import androidx.lifecycle.AndroidViewModel;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.MutableLiveData;
 import androidx.lifecycle.ViewModel;
@@ -10,13 +11,13 @@ import androidx.lifecycle.ViewModel;
 import com.example.hogwarts.models.Houses;
 import com.example.hogwarts.repository.DataRepository;
 
-public class HouseViewModel extends ViewModel {
+public class HouseViewModel extends AndroidViewModel {
 
     private DataRepository dataRepository;
     private LiveData<Houses> housesLiveData;
 
     public HouseViewModel(@NonNull Application application) {
-        super();
+        super(application);
     }
 
     public void init(){
